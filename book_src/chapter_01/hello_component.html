@@ -1,0 +1,27 @@
+<!-- 第3 ~ 4页 -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Vue.js Hello Component</title>
+		<script src="https://unpkg.com/vue"></script>
+	</head>
+	<body>
+		<div id="app">
+			<message content="Hello World"></message>
+		</div>
+
+		<script>
+			var Message = Vue.extend({
+				props: ['content'],
+				template: '<h1>{{content}}</h1>'
+			});
+
+			Vue.component('message', Message);
+
+			var app = new Vue({
+				el: '#app'
+			});
+		</script>
+	</body>
+</html>

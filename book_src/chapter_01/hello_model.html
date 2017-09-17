@@ -1,0 +1,24 @@
+<!-- 第3页 -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Vue.js Hello Model</title>
+		<script src="https://unpkg.com/vue"></script>
+	</head>
+	<body>
+		<div id="app">
+			<h1>Your input is {{ message }}</h1>
+			<input type="text" v-model="message">
+		</div>
+
+		<script>
+			var app = new Vue({
+				el: '#app',
+				data: {
+					message: 'Hello Vue Model!'
+				}
+			})
+		</script>
+	</body>
+</html>
