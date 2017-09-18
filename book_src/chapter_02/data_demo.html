@@ -10,7 +10,30 @@
 		<div id="app">
 			<p>a = {{ a }}</p>
 			<p>b = {{ b }}</p>
+
+			<my-component title="myTitle" content="myContent"></my-component>
 		</div>
+
+		<script>
+			var MyComponent = Vue.component('my-component', {
+				props: ['title', 'content'],
+
+				// 返回函数，已保证每个实例有自己的属性集；属性名称不能喝props里面的重复
+				data: function() {
+					return {
+						desc: '123'
+					}
+				},
+
+				template: `
+					<div>
+						<h1>{{ title }}</h1>
+						<p>{{ content }}</p>
+						<p>{{ desc }}</p>
+					</div>
+				`
+			});
+		</script>
 
 		<script>
 			//var data = { a: 1 }
