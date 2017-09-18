@@ -1,0 +1,43 @@
+<!-- 第7 ~ 8页 简单的数据示例 -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Vue.js data demo</title>
+		<script src="https://unpkg.com/vue"></script>
+	</head>
+	<body>
+		<div id="app">
+			<p>a = {{ a }}</p>
+			<p>b = {{ b }}</p>
+		</div>
+
+		<script>
+			//var data = { a: 1 }
+
+			// 解决方案：
+			var data = { a: 1, b: null }
+
+			var app = new Vue({
+				el: '#app',
+				data: data
+			});
+
+			console.log('app.$data === data', app.$data === data);
+			console.log('app.a === data.a', app.a === data.a);
+
+			app.a = 2;
+			console.log(app.a, data.a);
+
+			data.a = 3;
+			console.log(app.a, data.a);
+
+			// 这个会抛异常
+			app.$data.b = 2;
+
+			// 这个也直接抛异常： readonly property
+			//app.$set('b', 2);
+
+		</script>
+	</body>
+</html>
