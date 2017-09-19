@@ -44,6 +44,14 @@
 					logs.push('mounted');
 				},
 
+				// keep-alive 组件激活时调用。
+				activated: function() {
+					logs.push('activated');
+				},
+				deactivated: function() {
+					logs.push('deactivated');
+				},
+
 				beforeUpdate: function() {
 					//logs.push('beforeUpdate');	// 会死循环的
 					console.log('beforeUpdate');
@@ -59,6 +67,14 @@
 				destroyed: function() {
 					logs.push('destroyed');
 				},
+
+				ready: function() {
+					// 貌似没有反应
+
+					console.log('ready');
+					// 直接销毁
+					this.$destroy();
+				}
 			});
 		</script>
 	</body>
