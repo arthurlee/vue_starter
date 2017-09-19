@@ -1,0 +1,65 @@
+<!-- 第7 ~ 8页 简单的数据示例 -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Vue.js lifecycle demo</title>
+		<script src="../js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<h1>实际加载过程：</h1>
+			<ul>
+				<li v-for="item in logs">
+					{{ item }}
+				</li>
+			 </ul>
+		</div>
+
+		<div>
+			<h1>生命周期图：(来自官网)</h1>
+			<img src="lifecycle.png" width="100%" />
+		</div>
+
+		<script>
+			var logs = [];
+
+			var app = new Vue({
+				el: '#app',
+				data: {
+					logs: logs
+				},
+
+				beforeCreate: function() {
+					logs.push('beforeCreate');
+				},
+				created: function() {
+					logs.push('created');
+				},
+
+				beforeMount: function() {
+					logs.push('beforeMount');
+				},
+				mounted: function() {
+					logs.push('mounted');
+				},
+
+				beforeUpdate: function() {
+					//logs.push('beforeUpdate');	// 会死循环的
+					console.log('beforeUpdate');
+				},
+				updated: function() {
+					//logs.push('updated');		// 会死循环的
+					console.log('updated');
+				},
+
+				beforeDestroy: function() {
+					logs.push('beforeDestroy');
+				},
+				destroyed: function() {
+					logs.push('destroyed');
+				},
+			});
+		</script>
+	</body>
+</html>
