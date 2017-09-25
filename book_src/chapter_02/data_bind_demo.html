@@ -17,7 +17,11 @@
 			<!-- 属性 -->
 			<div v-bind:id="'id-' + id">属性id全写</div>
 			<div :id="'id-' + id">属性id简写</div>
-			
+
+			<!-- 绑定表达式 -->
+			<div>{{ index + 1 }}</div>
+			<div>{{ index == 0 ? 'a' : 'b' }}</div>
+			<div>{{ name.split('').join('|') }}</div>
 		</div>
 
 
