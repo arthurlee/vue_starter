@@ -35,12 +35,12 @@
   - ViewModel
 - weex
 - 前后端分离的场景下，更为合适
-- Mustache的语法
+- [Mustache的语法](https://mustache.github.io), [github](https://github.com/mustache/mustache)
 
 # 参考资料
-- 官方网站(英文)[vuejs.org]
-- 官方网站(中文)[cn.vuejs.org]
-- JSFiddle Hello World 例子[https://jsfiddle.net/chrisvfritz/50wL7mdz/]
+- [官方网站(英文)](vuejs.org)
+- [官方网站(中文)](cn.vuejs.org)
+- [JSFiddle Hello World 例子](https://jsfiddle.net/chrisvfritz/50wL7mdz/)
 
 # TODO
 - npm的安装方式
