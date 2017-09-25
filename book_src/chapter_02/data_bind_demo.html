@@ -13,6 +13,11 @@
 
 			<!-- 单次插值，只初始化一次 -->
 			<span v-once="name">Hello {{ name }}</span><br/>
+
+			<!-- 属性 -->
+			<div v-bind:id="'id-' + id">属性id全写</div>
+			<div :id="'id-' + id">属性id简写</div>
+			
 		</div>
 
 
